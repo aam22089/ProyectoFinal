@@ -28,11 +28,11 @@
     "@capacitor/keyboard": "7.0.0",
     "@capacitor/status-bar": "7.0.0",
     "@ionic/angular": "^8.0.0",
-<<<<<<< HEAD
+
     "ion2-calendar": "^3.5.0",
-=======
+
     "firebase": "^11.6.0",
->>>>>>> c43bff9e075e8756ac6c6761c4bfde42e886382f
+
     "ionicons": "^7.0.0",
     "moment": "^2.30.1",
     "rxjs": "~7.8.0",
