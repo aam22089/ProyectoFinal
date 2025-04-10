@@ -1,13 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>reset</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">reset</ion-title>
-    </ion-toolbar>
+
+  <ion-header [translucent]="true">
+    <ion-title class="header">Reset Password</ion-title>
   </ion-header>
+
+  <div class="body">
+    <br>
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+      <div class="mb-6">
+        <label for="email">Email:</label>
+        <input style="width: 90%;" type="email" id="email" name="email" [(ngModel)]="email"
+          placeholder="john.doe@company.com" required #emailInput="ngModel">
+        <div *ngIf="emailInput.invalid && emailInput.touched" style="color: red;">Please enter a valid email address
+        </div>
+      </div>
+      <button class="likeB" (click)="onSubmit()" [disabled]="registerForm.invalid">Send Email</button>
+    </form>
+  </div>
 </ion-content>
