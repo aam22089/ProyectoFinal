@@ -1,48 +1,50 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule} from '@angular/common';
-import { FormsModule} from '@angular/forms';
-import { AlertController } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { AlertController } from '@ionic/angular/standalone'
 import { Router } from '@angular/router';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.page.html',
-  styleUrls: ['./sign-up.page.scss'],
+  selector: 'app-signup',
+  templateUrl: './signup.page.html',
+  styleUrls: ['./signup.page.scss'],
   standalone: true,
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
-export class SignUpPage implements OnInit{
+export class SignupPage implements OnInit {
 
-  ngOnInit(){}
+  constructor(
+    private authService: AuthService,
+    private alertController: AlertController,
+    private router: Router
+  ) { }
 
   email: string = '';
   password: string = '';
 
-  constructor(
-    private alertController: AlertController,
-    private router: Router,
-    private authService: AuthService
-  ){}
+  ngOnInit() {
+  }
 
   async onSubmit() {
-    try{
+    try {
       await this.authService.register(this.email, this.password);
       const alert = await this.alertController.create({
-        header: 'Signup Success',
-        message: 'You have created successfully!',
+        header: 'Succes!',
+        message: 'Creaste una cuenta B)',
         buttons: ['OK'],
       });
       await alert.present();
       this.router.navigate(['/login']);
     } catch (error) {
-        const alert = await this.alertController.create({
-          header: 'Error',
-          message: 'Please complete all.',
-          buttons: ['OK'],
-        });
-        await alert.present();
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: ':(',
+        buttons: ['OK'],
+      })
+      await alert.present();
     }
   }
 

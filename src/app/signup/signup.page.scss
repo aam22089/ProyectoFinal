@@ -1,0 +1,68 @@
+/* Fondo con degradado */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor del formulario */
+.signup-container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Título */
+.signup-container h1 {
+  font-size: 2rem;
+  color: #333333;
+  margin-bottom: 1.5rem;
+}
+
+/* Campos del formulario */
+.signup-container input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Botón */
+.signup-container button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  background: #2575fc;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.signup-container button:hover {
+  background: #1a5bb8;
+}
+
+/* Enlace */
+.signup-container a {
+  display: block;
+  margin-top: 1rem;
+  color: #2575fc;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.signup-container a:hover {
+  text-decoration: underline;
+}
