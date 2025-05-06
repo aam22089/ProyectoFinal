@@ -15,8 +15,25 @@
     <ion-label>Selecciona una fecha</ion-label>
     <ion-datetime
       display-format="DD/MM/YYYY"
-      placeholder="Elige una fecha:"
-      [(ngModel)]="selectedDate">
+      [(ngModel)]="selectedDate"
+      (ionChange)="loadNote()">
     </ion-datetime>
   </ion-item>
+
+  <ion-item>
+    <ion-textarea placeholder="Escribe tu nota..."
+                  [(ngModel)]="noteText">
+    </ion-textarea>
+  </ion-item>
+
+  <ion-button expand="block" (click)="saveNote()">Guardar Nota</ion-button>
+
+  <ion-card *ngIf="loadedNote">
+    <ion-card-header>
+      <ion-card-title>Nota guardada para {{ selectedDate | date:'dd/MM/yyyy' }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ loadedNote }}
+    </ion-card-content>
+  </ion-card>
 </ion-content>
