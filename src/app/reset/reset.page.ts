@@ -13,7 +13,7 @@ import { AuthService } from '../auth.service';
   templateUrl: './reset.page.html',
   styleUrls: ['./reset.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonContent, IonHeader, IonTitle, CommonModule, FormsModule]
 })
 export class ResetPage implements OnInit {
 
