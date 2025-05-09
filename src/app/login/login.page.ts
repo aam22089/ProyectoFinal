@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
         buttons: ['OK'],
       });
       await alert.present();
-      this.router.navigate(['/home']);
+      this.router.navigate(['/calendar']);
     } catch (error) {
       const alert = await this.alertController.create({
         header: 'Error',
