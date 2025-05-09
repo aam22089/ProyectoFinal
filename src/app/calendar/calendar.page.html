@@ -13,12 +13,14 @@
 
   <ion-item>
     <ion-label>Selecciona una fecha</ion-label>
-    <ion-datetime
-      display-format="DD/MM/YYYY"
-      [(ngModel)]="selectedDate"
-      (ionChange)="loadNote()">
-    </ion-datetime>
   </ion-item>
+
+  <ion-datetime
+    presentation="date"
+    size="cover"
+    [(ngModel)]="selectedDate"
+    (ionChange)="loadNote()">
+  </ion-datetime>
 
   <ion-item>
     <ion-textarea placeholder="Escribe tu nota..."
@@ -30,7 +32,9 @@
 
   <ion-card *ngIf="loadedNote">
     <ion-card-header>
-      <ion-card-title>Nota guardada para {{ selectedDate | date:'dd/MM/yyyy' }}</ion-card-title>
+      <ion-card-title>
+        Nota guardada para {{ selectedDate | date:'dd/MM/yyyy' }}
+      </ion-card-title>
     </ion-card-header>
     <ion-card-content>
       {{ loadedNote }}

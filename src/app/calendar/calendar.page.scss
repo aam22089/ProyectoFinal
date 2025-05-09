@@ -1,0 +1,12 @@
+ion-datetime::part(calendar-day) {
+    font-size: 1.2rem;
+    min-width: 1rem;
+    min-height: 1rem;
+  }
+  
+  ion-datetime::part(calendar-day-active) {
+    background-color: #3880ff;
+    color: white;
+    border-radius: 8px;
+  }
+  
