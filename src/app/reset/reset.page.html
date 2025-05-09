@@ -4,17 +4,17 @@
     <ion-title class="header">Reset Password</ion-title>
   </ion-header>
 
-  <div class="body">
-    <br>
-    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
-      <div class="mb-6">
+  <div>
+    <form (ngSubmit)="onSubmit()" #resetForm="ngForm">
+      <div> <br>
         <label for="email">Email:</label>
-        <input style="width: 90%;" type="email" id="email" name="email" [(ngModel)]="email"
-          placeholder="john.doe@company.com" required #emailInput="ngModel">
-        <div *ngIf="emailInput.invalid && emailInput.touched" style="color: red;">Please enter a valid email address
-        </div>
+        <input type="email" id="email" name="email" [(ngModel)]="email"
+          placeholder="Enter your email" required #emailInput="ngModel">
+        <div *ngIf="emailInput.invalid && emailInput.touched" style="color: red;">Please enter a valid email address</div>
       </div>
-      <button class="likeB" (click)="onSubmit()" [disabled]="registerForm.invalid">Send Email</button>
+      <div class="button-container">
+        <button type="submit" [disabled]="resetForm.invalid" class="reset-button">Reset Password</button>
+      </div>
     </form>
   </div>
 </ion-content>

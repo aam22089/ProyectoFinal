@@ -4,23 +4,24 @@
     <ion-title class="header">Sign-up</ion-title>
   </ion-header>
 
-  <div class="body">
+  <div>
     <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
       <div> <br>
         <label for="email">Email:</label>
-        <input style="width: 90%;" type="email" id="email" name="email" [(ngModel)]="email"
+        <input type="email" id="email" name="email" [(ngModel)]="email"
           placeholder="john.doe@company.com" required #emailInput="ngModel">
-        <div *ngIf="emailInput.invalid && emailInput.touched" style="color: red;">Please enter a valid email address
-        </div>
+        <div *ngIf="emailInput.invalid && emailInput.touched" style="color: red;">Please enter a valid email address</div>
       </div>
-      <div class="mb-6"> <br>
+      <div> <br>
         <label for="password">Password:</label>
-        <input style="width: 88%;" type="password" id="password" name="password" [(ngModel)]="password" required
+        <input type="password" id="password" name="password" [(ngModel)]="password" required
           #passwordInput="ngModel">
       </div>
-      <button class="likeB" type="submit" [disabled]="registerForm.invalid" (click)="onSubmit()">Crear Cuenta</button>
+      <div class="likeB">
+        <button type="submit" [disabled]="registerForm.invalid" (click)="onSubmit()">Crear Cuenta</button>
+      </div>
     </form> <br>
-    <button class="likeB" (click)="onSignUp()">
+    <button class="login-button" (click)="onSignUp()">
       Log In
     </button>
   </div>
