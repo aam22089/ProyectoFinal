@@ -5,6 +5,7 @@ import { from, Observable } from 'rxjs';
 export interface Event {
   id?: string;
   title: string;
+  type: string;
   completed: boolean;
 }
 
