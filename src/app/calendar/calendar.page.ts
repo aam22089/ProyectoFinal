@@ -45,10 +45,13 @@ export class CalendarPage implements OnInit {
   selectedDate: string = '';
   noteText: string = '';
   loadedNote: string = '';
+  daysWithNotes: string[] = [];
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.loadDaysWithNotes();
+  }
 
   loadNote() {
     if (this.selectedDate) {
@@ -62,6 +65,22 @@ export class CalendarPage implements OnInit {
     if (this.selectedDate && this.noteText.trim()) {
       localStorage.setItem(`note-${this.selectedDate}`, this.noteText);
       this.loadedNote = this.noteText;
+      this.loadDaysWithNotes();
+    }
+  }
+
+  loadDaysWithNotes() {
+    this.daysWithNotes = [];
+
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.startsWith('note-')) {
+        const dateStr = key.replace('note-', '');
+        const note = localStorage.getItem(key);
+        if (note && note.trim()) {
+          this.daysWithNotes.push(dateStr);
+        }
+      }
     }
   }
 }

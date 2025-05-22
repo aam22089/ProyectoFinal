@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true"> 
   <ion-toolbar>
     <ion-title>Calendar</ion-title>
   </ion-toolbar>
@@ -18,9 +18,18 @@
   <ion-datetime
     presentation="date"
     size="cover"
-    [(ngModel)]="selectedDate:"
+    [(ngModel)]="selectedDate"
     (ionChange)="loadNote()">
   </ion-datetime>
+
+  
+  <ion-list>
+    <ion-item *ngFor="let day of daysWithNotes">
+      <ion-label>
+        {{ day | date: 'dd/MM/yyyy' }} - <strong>¡</strong>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
   <ion-item>
     <ion-textarea placeholder="Escribe tu nota:"
