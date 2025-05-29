@@ -14,7 +14,8 @@ import {
   IonCard,
   IonCardHeader,
   IonCardTitle,
-  IonCardContent
+  IonCardContent, 
+  IonList
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -37,7 +38,8 @@ import {
     IonCardTitle,
     IonCardContent,
     CommonModule,
-    FormsModule
+    FormsModule,
+    IonList
   ]
 })
 export class CalendarPage implements OnInit {
