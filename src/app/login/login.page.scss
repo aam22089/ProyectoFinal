@@ -66,17 +66,45 @@ form div[style="color: red;"] {
 }
 
 .likeB button:nth-child(1) {
-  background: #ff7f50;
+  background: #ff0000;
 }
 
 .likeB button:nth-child(1):hover {
-  background: #e76e3c;
+  background: #ff5d5d;
 }
-
 .likeB button:nth-child(2) {
   background: #32cd32;
 }
 
 .likeB button:nth-child(2):hover {
   background: #28a428;
+}
+
+.likeB button:nth-child(3) {
+  background: #1e90ff;
+}
+
+.likeB button:nth-child(3):hover {
+  background: #1c86ee;
+}
+
+.login-button {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #0044ff;
+  color: #ffffff;
+  text-align: center;
+}
+
+.login-button:hover {
+  background: #0044ff;
+}
+
+.login-button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
 }

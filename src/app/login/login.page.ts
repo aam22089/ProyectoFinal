@@ -34,11 +34,11 @@ export class LoginPage implements OnInit {
       await this.authService.login(this.email, this.password);
       const alert = await this.alertController.create({
         header: 'Succes!',
-        message: 'loginnnnnnnn',
+        message: 'logged in',
         buttons: ['OK'],
       });
       await alert.present();
-      this.router.navigate(['/home']);
+      this.router.navigate(['/calendar']);
     } catch (error) {
       const alert = await this.alertController.create({
         header: 'Error',
