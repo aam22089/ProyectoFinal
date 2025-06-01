@@ -21,7 +21,8 @@ export const routes: Routes = [
   {
     path: 'reset',
     loadComponent: () => import('./reset/reset.page').then(m => m.ResetPage)
-  },  {
+  },
+  {
     path: 'calendar',
     loadComponent: () => import('./calendar/calendar.page').then( m => m.CalendarPage)
   },
