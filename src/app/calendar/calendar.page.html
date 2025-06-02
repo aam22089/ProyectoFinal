@@ -39,6 +39,8 @@
 
   <ion-button expand="block" (click)="saveNote()">Guardar Nota</ion-button>
 
+  <ion-button (click)="logout()">Cerrar sesión</ion-button>
+
   <ion-card *ngIf="loadedNote">
     <ion-card-header>
       <ion-card-title>
